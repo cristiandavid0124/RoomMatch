@@ -3,7 +3,7 @@
  - Carolina Medina Acero
  - Andres Felipe Montes ortiz
  - Cristian David Naranjo Orjuela
-## Descripción del proyecto
+
 ## Versión del lenguaje
 Para ejecutar este proyecto, necesitarás tener instalado:
 
