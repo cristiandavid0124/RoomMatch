@@ -3,7 +3,9 @@ package com.vanguardix.proyecto.service;
 import com.vanguardix.proyecto.model.User;
 import com.vanguardix.proyecto.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -30,7 +32,7 @@ public class UserService {
         if (userRepository.existsById(id)) {
             userRepository.deleteById(id);
         } else {
-            throw new RuntimeException("Usuario no encontrado con ID: " + id);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuario no encontrado con ID: " + id);
         }
     }
 
@@ -39,9 +41,10 @@ public class UserService {
                 .map(user -> {
                     user.setName(updatedUser.getName());
                     user.setEmail(updatedUser.getEmail());
+                    user.setPassword(updatedUser.getPassword());
                     return userRepository.save(user);
                 })
-                .orElseThrow(() -> new RuntimeException("Usuario no encontrado con ID: " + id));
+                .orElseThrow(() ->  new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuario no encontrado con ID: " + id));
     }
 }
 
