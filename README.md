@@ -38,7 +38,7 @@ Para ejecutar este proyecto, necesitarás tener instalado:
 3. abrir la terminal de GIT --> mediante el click derecho seleccionas Git bash here
 4. Clona el repositorio en tu máquina local:
    ```bash
-   git clone https://github.com/cristiandavid0124/Vanguardix.git
+   git clone https://github.com/cristiandavid0124/RoomMatch.git
    ```
 ### Ejecutar 
 1. Abre el proyecto con tu IDE favorito o navega hasta el directorio del proyecto
